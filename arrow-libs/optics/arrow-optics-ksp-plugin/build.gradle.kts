@@ -57,3 +57,9 @@ tasks.withType<Test>().configureEach {
   maxParallelForks = 1
   useJUnitPlatform()
 }
+
+tasks.named<Test>("test") {
+  reports {
+    junitXml.outputLocation = file("$buildDir/test-results/jvmTest")
+  }
+}

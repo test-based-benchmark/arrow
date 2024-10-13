@@ -51,3 +51,9 @@ tasks.jar {
 tasks.withType<Test>().configureEach {
   useJUnitPlatform()
 }
+
+tasks.named<Test>("test") {
+  reports {
+    junitXml.outputLocation = file("$buildDir/test-results/jvmTest")
+  }
+}
